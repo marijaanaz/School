@@ -53,8 +53,3 @@ def logout(browser):
 def logout_successful(browser):
     WebDriverWait(browser, 8).until(EC.title_is("Log in to continue - Log in with Atlassian account"))
     assert browser.title == "Log in to continue - Log in with Atlassian account"
-
-
-
-
-
