@@ -1,10 +1,9 @@
-import pytest
-import time
-
 from pytest_bdd import scenarios, given, when, then, parsers
-from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 # Constants
@@ -32,7 +31,7 @@ def enter_login(browser, username, password):
     username_input.click()
     username_input.send_keys(username + Keys.RETURN)
 
-    time.sleep(3)
+    WebDriverWait(browser, 3).until(EC.element_to_be_clickable((By.ID, "password")))
     password_input = browser.find_element_by_id("password")
     password_input.click()
     password_input.send_keys(password + Keys.RETURN)
@@ -50,9 +49,3 @@ def login_successful(browser):
                 break
         except NoSuchElementException:
             print("Login unsuccessful")
-
-
-
-
-
-

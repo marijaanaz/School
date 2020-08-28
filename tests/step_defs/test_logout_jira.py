@@ -1,10 +1,8 @@
-import pytest
-import time
-
-from pytest_bdd import scenarios, given, when, then, parsers
-from selenium import webdriver
+from pytest_bdd import scenarios, given, when, then
+from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 # Constants
@@ -26,12 +24,12 @@ def login(browser):
     username_input.click()
     username_input.send_keys("ucsd.ext10@gmail.com" + Keys.RETURN)
 
-    time.sleep(3)
+    WebDriverWait(browser, 3).until(EC.element_to_be_clickable((By.ID, "password")))
     password_input = browser.find_element_by_id("password")
     password_input.click()
     password_input.send_keys("ucsdtest101" + Keys.RETURN)
 
-    time.sleep(8)
+    WebDriverWait(browser, 8).until(EC.title_is("System dashboard - JIRA"))
     assert browser.title == "System dashboard - JIRA"
 
 
@@ -53,7 +51,7 @@ def logout(browser):
 
 @then('log out should be successful')
 def logout_successful(browser):
-    time.sleep(8)
+    WebDriverWait(browser, 8).until(EC.title_is("Log in to continue - Log in with Atlassian account"))
     assert browser.title == "Log in to continue - Log in with Atlassian account"
 
 
