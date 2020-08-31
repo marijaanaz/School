@@ -17,7 +17,7 @@ scenarios('../features/logout_jira.feature')
 
 # Given Steps
 
-@given('User is logged in')
+@given('I am logged in')
 def login(browser):
     browser.get(JIRA_HOME)
     username_input = browser.find_element_by_id("username")

@@ -5,6 +5,6 @@ Feature: Login to Jira
 
 
   Scenario: Valid Login
-    Given User navigates to Jira
+    Given Jira website is displayed
     When I enter "ucsd.ext10@gmail.com" and "ucsdtest101"
     Then login should be successful
