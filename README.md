@@ -1,6 +1,6 @@
-# Software Testing for Quality Assurance
+# Assignment 8
 
-This repository contains code for the Software Testing for Quality Assurance course from UCSD Extension. There is a branch for each lesson of the course.
+Question 1: Taking the in-class exercise of automating the login to JIRA, extend it to log out from the account.
 
 ## Setup
 This project requires an up-to-date version of Python 3.
