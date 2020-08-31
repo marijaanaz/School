@@ -18,7 +18,7 @@ scenarios('../features/login_jira.feature')
 
 # Given Steps
 
-@given('User navigates to Jira')
+@given('Jira website is displayed')
 def jira_home(browser):
     browser.get(JIRA_HOME)
 

@@ -5,6 +5,6 @@ Feature: Log out from Jira
 
 
   Scenario: Valid Log out
-    Given User is logged in
+    Given I am logged in
     When I log out from platform
     Then log out should be successful
