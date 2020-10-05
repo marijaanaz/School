@@ -1,6 +1,5 @@
 # Software Testing for Quality Assurance
-
-This repository contains code for the Software Testing for Quality Assurance course from UCSD Extension. There is a branch for each assignment of the course.
+This repository contains code for the Software Testing for Quality Assurance course from UCSD Extension.
 
 ## Setup
 This project requires an up-to-date version of Python 3.
